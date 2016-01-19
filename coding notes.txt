@@ -1,0 +1,81 @@
+Coding
+
+- keep it short
+- keep it simple
+- keep it easy to understand
+
+So instead of doing on script with
+example:
+One script:
+power ups
+- if it is for ammo
+- if it is for health
+- if it is for both
+
+Instead, divide it into smaller scripts that call on the power up script
+
+
+
+using UnityEngine;
+using System.Collections;
+
+public class UserEvents : MonoBehavior {
+
+	
+
+	void OnMouseDown () {
+		print ("Down");
+}
+
+	void OnMouseEnter () {
+		print ("Enter");
+	}
+
+	void OnMouseDrag() {
+		pring ("Drag");
+	}
+
+	void OnMouseExit () {
+		print ("Exit");
+	}
+
+
+		
+}
+
+
+apply above script to a sprite (example: crack o latern latern)
+
+now add some stuff
+
+using UnityEngine;
+using System.Collections;
+
+public class UserEvents : MonoBehavior {
+
+	Rigidbody thisRigidBody; //creates a rigid body variable 
+
+	void Start () {
+		thisRigidbody = GetComponent<Rigidbody> (); 
+//on start, unity will call the rigid body, then below we added force
+
+	void OnMouseDown () {
+		print ("Down");
+		thisRigidbody.AddForce (0, 100, 0);
+}
+
+	void OnMouseEnter () {
+		print ("Enter");
+	}
+
+	void OnMouseDrag() {
+		pring ("Drag");
+	}
+
+	void OnMouseExit () {
+		print ("Exit");
+	}
+
+
+		
+}
